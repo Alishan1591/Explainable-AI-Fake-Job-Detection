@@ -27,3 +27,7 @@ Thumbs.db
 
 # Logs
 *.log
+
+# Large datasets
+dataset/fake_job_postings.csv
+dataset/job_postings_exploration.csv
