@@ -48,8 +48,9 @@ export function AuthProvider({ children }) {
   };
 
   useEffect(() => {
-    loadUser();
-  }, [token]);
+  setLoading(true);
+  loadUser();
+}, [token]);
 
   return (
     <AuthContext.Provider
