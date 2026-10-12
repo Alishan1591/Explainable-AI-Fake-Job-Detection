@@ -1,0 +1,15 @@
+fastapi
+uvicorn[standard]
+SQLAlchemy
+PyMySQL
+python-dotenv
+python-multipart
+passlib[bcrypt]
+python-jose[cryptography]
+email-validator
+numpy
+pandas
+scipy
+scikit-learn
+joblib
+shap
