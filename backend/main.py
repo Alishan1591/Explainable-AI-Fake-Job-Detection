@@ -37,6 +37,16 @@ app = FastAPI(
 app.add_middleware(
     CORSMiddleware,
     allow_origins=[
+        "https://explainable-ai-fake-job-detection-u.vercel.app",
+        "https://explainable-ai-fake-job-detection-u67s-qhs9xxpyo-alishan5.vercel.app",
+    ],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=[
         FRONTEND_URL
     ],
     allow_credentials=True,
