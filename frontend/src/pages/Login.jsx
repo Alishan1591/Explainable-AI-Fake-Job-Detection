@@ -23,54 +23,28 @@ function Login() {
     }));
   };
 
-  
-const handleSubmit = async (e) => {
-  e.preventDefault();
-  setError("");
-  setLoading(true);
-
-  try {
-    const body = new URLSearchParams();
-    body.append("username", formData.email);
-    body.append("password", formData.password);
-
-    const response = await api.post("/login", body, {
-      headers: {
-        "Content-Type": "application/x-www-form-urlencoded",
-      },
-    });
-
-    login(response.data.access_token);
-    navigate("/");
-  } catch (err) {
-    setError(
-      err.response?.data?.detail ||
-        "Login failed. Please check your credentials."
-    );
-  } finally {
-    setLoading(false);
-  }
-};
-
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setError("");
+    setLoading(true);
 
     try {
       const body = new URLSearchParams();
-body.append("username", formData.email);
-body.append("password", formData.password);
+      body.append("username", formData.email);
+      body.append("password", formData.password);
 
-const response = await api.post("/login", body, {
-  headers: {
-    "Content-Type": "application/x-www-form-urlencoded",
-  },
- });
+      const response = await api.post("/login", body, {
+        headers: {
+          "Content-Type": "application/x-www-form-urlencoded",
+        },
+      });
 
-      // Apne AuthContext ke login function ke mutabik adjust karein.
-      login(response.data);
+      login(response.data.access_token);
       navigate("/");
     } catch (err) {
       setError(
         err.response?.data?.detail ||
-        "Login failed. Please check your credentials."
+          "Login failed. Please check your credentials."
       );
     } finally {
       setLoading(false);
@@ -124,6 +98,6 @@ const response = await api.post("/login", body, {
       </p>
     </div>
   );
-
+}
 
 export default Login;
